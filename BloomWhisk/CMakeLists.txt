@@ -11,6 +11,7 @@ qt_add_executable(BloomWhisk
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    colors.h colors.cpp
 )
 
 target_link_libraries(BloomWhisk
