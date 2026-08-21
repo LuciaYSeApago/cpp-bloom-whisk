@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>774</width>
-    <height>600</height>
+    <width>773</width>
+    <height>709</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -22,13 +28,13 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>771</width>
-      <height>541</height>
+      <width>761</width>
+      <height>571</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="PrincipalLayout">
      <property name="spacing">
-      <number>12</number>
+      <number>8</number>
      </property>
      <property name="leftMargin">
       <number>24</number>
@@ -56,7 +62,7 @@
           <number>0</number>
          </property>
          <item>
-          <spacer name="verticalSpacer_3">
+          <spacer name="verticalSpacer_4">
            <property name="orientation">
             <enum>Qt::Orientation::Vertical</enum>
            </property>
@@ -66,7 +72,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
-             <height>10</height>
+             <height>30</height>
             </size>
            </property>
           </spacer>
@@ -94,12 +100,28 @@
           </widget>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>10</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="subtitleLayout">
            <property name="spacing">
             <number>0</number>
            </property>
            <item>
-            <spacer name="horizontalSpacer_3">
+            <spacer name="horizontalSpacer_2">
              <property name="orientation">
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
@@ -139,8 +161,53 @@
            </item>
           </layout>
          </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>2</number>
+         </property>
          <item>
-          <spacer name="verticalSpacer">
+          <widget class="QPushButton" name="addMatchaButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FFC4D4;
+    color: #3D3542;
+    border: 2px solid #FDA2BC;
+    border-radius: 12px;
+    padding: 8px 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>+ Add Matcha</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
            <property name="orientation">
             <enum>Qt::Orientation::Vertical</enum>
            </property>
@@ -150,73 +217,30 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
-             <height>20</height>
+             <height>60</height>
             </size>
            </property>
           </spacer>
          </item>
         </layout>
        </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>70</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="addMatchaButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: #FDA2BC;
-    color: #3D3542;
-    border: none;
-    border-radius: 12px;
-    padding: 8px 16px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    background-color: #FFC4D4;
-}</string>
-         </property>
-         <property name="text">
-          <string>+ Add Matcha</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Policy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QLineEdit" name="searchBar">
@@ -228,9 +252,9 @@ QPushButton:hover {
        </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
-    background-color: #FFFFFF;
+	background-color: #FFC4D4;
     color: #3D3542;
-    border: 2px solid #FFC4D4;
+    border: 2px solid #FDA2BC;
     border-radius: 12px;
     padding: 8px 12px;
 }</string>
@@ -242,11 +266,30 @@ QPushButton:hover {
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>7</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item>
         <widget class="QLabel" name="label">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>30</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
@@ -262,6 +305,13 @@ QPushButton:hover {
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox{
+	background-color: #FFC4D4;
+    color: #3D3542;
+    border: 2px solid #FDA2BC;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -290,17 +340,57 @@ QPushButton:hover {
          </item>
         </widget>
        </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <layout class="QHBoxLayout" name="CardsLayout">
        <item>
         <widget class="QFrame" name="matchaCard2">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
+           <verstretch>30</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame{
+	background-color: #C4EDAB;
+    color: #3D3542;
+    border: 2px solid #89B767;
+    border-radius: 12px;
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::StyledPanel</enum>
@@ -313,18 +403,32 @@ QPushButton:hover {
            <rect>
             <x>10</x>
             <y>10</y>
-            <width>234</width>
-            <height>112</height>
+            <width>279</width>
+            <height>172</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="matchaLayout2">
            <item>
             <widget class="QLabel" name="matchaLabel2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>18</pointsize>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}</string>
              </property>
              <property name="text">
               <string>Random Matcha</string>
@@ -333,10 +437,24 @@ QPushButton:hover {
            </item>
            <item>
             <widget class="QLabel" name="ratingLabel2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
-               <pointsize>16</pointsize>
+               <pointsize>12</pointsize>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}</string>
              </property>
              <property name="text">
               <string>★★★★★</string>
@@ -345,6 +463,14 @@ QPushButton:hover {
            </item>
            <item>
             <widget class="QLabel" name="consumedLabel2">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}</string>
+             </property>
              <property name="text">
               <string>Consumed: 13 times</string>
              </property>
@@ -357,17 +483,17 @@ QPushButton:hover {
        <item>
         <widget class="QFrame" name="matchaCard">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
+           <verstretch>30</verstretch>
           </sizepolicy>
          </property>
          <property name="styleSheet">
-          <string notr="true">QFrame#matchaCard
-{
-	background-color: #FFFFFF;
-	border: 2xp solid #FFC4D4;
-	border-radius: 16px;
+          <string notr="true">QFrame{
+	background-color: #C4EDAB;
+    color: #3D3542;
+    border: 2px solid #89B767;
+    border-radius: 12px;
 }</string>
          </property>
          <property name="frameShape">
@@ -395,7 +521,12 @@ QPushButton:hover {
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">Color: #3D3542</string>
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}</string>
              </property>
              <property name="text">
               <string>Ippodo Sayaka</string>
@@ -409,6 +540,14 @@ QPushButton:hover {
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}</string>
+             </property>
              <property name="text">
               <string>★★★★★</string>
              </property>
@@ -417,7 +556,13 @@ QPushButton:hover {
            <item>
             <widget class="QLabel" name="consumedLabel">
              <property name="styleSheet">
-              <string notr="true">color: #3D3542;</string>
+              <string notr="true">QLabel{
+	background-color: none;
+    color: #3D3542;
+    border:none;
+    border-radius: 12px;
+}
+</string>
              </property>
              <property name="text">
               <string>Consumed: 12 times</string>
@@ -430,6 +575,22 @@ QPushButton:hover {
        </item>
       </layout>
      </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -438,7 +599,7 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>774</width>
+     <width>773</width>
      <height>26</height>
     </rect>
    </property>

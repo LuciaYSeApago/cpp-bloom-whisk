@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     setWindowTitle("BloomWhisk");
 
     //initial size (user can always change it)
-    resize (900,600);
+    //resize (900,600);
 
     setStyleSheet(
         "QMainWindow {"
