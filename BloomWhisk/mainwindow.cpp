@@ -15,12 +15,16 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
         "Smooth, creamy",
         5,
         12
-        );
+    );
+    displayMatcha(sayaka, 1);
 
-    qDebug()<< sayaka.getName();
-    qDebug()<< sayaka.getInfo();
-    qDebug()<< sayaka.getRating();
-    qDebug()<< sayaka.getTimesConsumed();
+    matcha hojicha(
+        "Yunomi Hojicha",
+        "Roasted, warm and nutty",
+        4,
+        7
+    );
+    displayMatcha(hojicha,2);
 
     setWindowTitle("BloomWhisk");
 
@@ -37,5 +41,23 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     );
 
 }
+void MainWindow::displayMatcha(const matcha&m , int cardNumber)
+{
+    QString stars = QString(m.getRating(), u'★');
 
+    if (cardNumber == 1)
+    {
+        ui -> matchaLabel1 -> setText(m.getName());
+        ui -> infoLabel1 -> setText(m.getInfo());
+        ui -> ratingLabel1 -> setText(stars);
+        ui -> consumedLabel1 -> setText("Consumed: "+ QString::number(m.getTimesConsumed()) + " times");
+    }
+    else if (cardNumber == 2)
+    {
+        ui -> matchaLabel2 -> setText(m.getName());
+        ui -> infoLabel2 -> setText(m.getInfo());
+        ui -> ratingLabel2 -> setText(stars);
+        ui -> consumedLabel2 -> setText("Consumed: "+ QString::number(m.getTimesConsumed()) + " times");
+    }
+}
 MainWindow::~MainWindow() { delete ui; }

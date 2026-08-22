@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "matcha.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +20,8 @@ class MainWindow : public QMainWindow
     ~MainWindow() override;
 
   private:
+    void displayMatcha(const matcha& m, int cardNumber);
+
     Ui::MainWindow* ui;
 };
 #endif // MAINWINDOW_H
