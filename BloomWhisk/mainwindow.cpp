@@ -3,6 +3,7 @@
 #include "colors.h"
 #include "matcha.h"
 
+
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -10,21 +11,26 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     //conects window with whatever is designed in ui
     ui->setupUi(this);
 
-    matcha sayaka(
-        "Ippodo Sayaka",
-        "Smooth, creamy",
-        5,
-        12
+    //add matchas to list
+    matchas.append(
+        matcha(
+            "Ippodo Sayaka",
+            "Smooth, creamy",
+            5,
+            12
+        )
     );
-    displayMatcha(sayaka, 1);
 
-    matcha hojicha(
-        "Yunomi Hojicha",
-        "Roasted, warm and nutty",
-        4,
-        7
+    matchas.append(
+        matcha(
+            "Yunomi Hojicha",
+            "Roasted, warm and nutty",
+            4,
+            7
+        )
     );
-    displayMatcha(hojicha,2);
+
+    displayMatchas();
 
     setWindowTitle("BloomWhisk");
 
@@ -60,4 +66,18 @@ void MainWindow::displayMatcha(const matcha&m , int cardNumber)
         ui -> consumedLabel2 -> setText("Consumed: "+ QString::number(m.getTimesConsumed()) + " times");
     }
 }
+
+void MainWindow :: displayMatchas()
+{
+    if (matchas.size() > 0)
+    {
+        displayMatcha(matchas[0],1);
+    }
+    else if (matchas.size() > 1)
+    {
+        displayMatcha(matchas[1],2);
+    }
+}
+
+
 MainWindow::~MainWindow() { delete ui; }
