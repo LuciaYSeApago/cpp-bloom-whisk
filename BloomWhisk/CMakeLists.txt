@@ -13,6 +13,8 @@ qt_add_executable(BloomWhisk
     mainwindow.ui
     colors.h colors.cpp
     matcha.h matcha.cpp
+    addmatchadialog.h addmatchadialog.cpp addmatchadialog.ui
+
 )
 
 target_link_libraries(BloomWhisk

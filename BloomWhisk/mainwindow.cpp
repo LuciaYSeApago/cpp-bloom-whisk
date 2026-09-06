@@ -2,8 +2,9 @@
 #include "ui_mainwindow.h"
 #include "colors.h"
 #include "matcha.h"
+#include "addmatchadialog.h"
 
-
+#include <QPushButton>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -32,6 +33,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     displayMatchas();
 
+    //connect with addMatchaWindow
+    connect (ui -> addMatchaButton, &QPushButton::clicked, this &MainWindow::addMatcha);
     setWindowTitle("BloomWhisk");
 
     //initial size (user can always change it)
@@ -79,5 +82,20 @@ void MainWindow :: displayMatchas()
     }
 }
 
+void MainWindow::addMatcha()
+{
+    AddMatchaDialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        matchas.append(dialog.createMatcha());
+
+        displayMatchas();
+
+        statusBar()->showMessage(
+            "Matcha added! Total: " + QString::number(matchas.size())
+            );
+    }
+}
 
 MainWindow::~MainWindow() { delete ui; }

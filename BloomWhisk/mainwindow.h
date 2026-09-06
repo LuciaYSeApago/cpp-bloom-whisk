@@ -2,10 +2,12 @@
 #define MAINWINDOW_H
 
 #include "matcha.h"
+#include "addmatchadialog.h"
 
 //qlist saves multiple objects in matcha
 #include <QList>
 #include <QMainWindow>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -25,6 +27,7 @@ class MainWindow : public QMainWindow
   private:
     void displayMatcha(const matcha& m, int cardNumber);
     void displayMatchas();
+    void addMatcha();
 
     //creates a list with matcha type
     QList<matcha> matchas;
