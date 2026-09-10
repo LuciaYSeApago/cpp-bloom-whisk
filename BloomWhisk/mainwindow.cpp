@@ -34,7 +34,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     displayMatchas();
 
     //connect with addMatchaWindow
-    connect (ui -> addMatchaButton, &QPushButton::clicked, this &MainWindow::addMatcha);
+    connect(ui->addMatchaButton, &QPushButton::clicked, this, &MainWindow::addMatcha);
     setWindowTitle("BloomWhisk");
 
     //initial size (user can always change it)
