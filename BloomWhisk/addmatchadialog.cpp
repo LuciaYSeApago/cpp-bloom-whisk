@@ -1,10 +1,21 @@
 #include "addmatchadialog.h"
 #include "ui_addmatchadialog.h"
+#include "colors.h"
+
 #include <QDialogButtonBox>
 
 AddMatchaDialog::AddMatchaDialog(QWidget* parent) : QDialog(parent), ui(new Ui::AddMatchaDialog)
 {
     ui->setupUi(this);
+
+    setStyleSheet(
+        "QWidget {"
+        "background-color: " + BloomColors::Green + ";"
+                             "}"
+                             "QWidget#centralwidget {"
+                             "background-color: " + BloomColors::Green + ";"
+                             "}"
+        );
 
     connect(ui -> buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(ui -> buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
