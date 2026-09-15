@@ -14,6 +14,7 @@ qt_add_executable(BloomWhisk
     colors.h colors.cpp
     matcha.h matcha.cpp
     addmatchadialog.h addmatchadialog.cpp addmatchadialog.ui
+    matchacard.h matchacard.cpp matchacard.ui
 
 )
 
