@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
     ~MainWindow() override;
 
   private:
-    void displayMatcha(const matcha& m, int cardNumber);
+    //void displayMatcha(const matcha& m, int cardNumber);
     void displayMatchas();
     void addMatcha();
 

@@ -2,10 +2,17 @@
 #include "ui_mainwindow.h"
 #include "colors.h"
 #include "matcha.h"
-#include "addmatchadialog.h"
+#include "matchacard.h"
 
 #include <QPushButton>
 #include <QDebug>
+#include <QVBoxLayout>
+#include <QFrame>
+#include <QLabel>
+#include <QLayout>
+#include <QLayoutItem>
+#include <QSpacerItem>
+#include <QSizePolicy>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -50,36 +57,30 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     );
 
 }
-void MainWindow::displayMatcha(const matcha&m , int cardNumber)
-{
-    QString stars = QString(m.getRating(), u'★');
 
-    if (cardNumber == 1)
-    {
-        ui -> matchaLabel1 -> setText(m.getName());
-        ui -> infoLabel1 -> setText(m.getInfo());
-        ui -> ratingLabel1 -> setText(stars);
-        ui -> consumedLabel1 -> setText("Consumed: "+ QString::number(m.getTimesConsumed()) + " times");
-    }
-    else if (cardNumber == 2)
-    {
-        ui -> matchaLabel2 -> setText(m.getName());
-        ui -> infoLabel2 -> setText(m.getInfo());
-        ui -> ratingLabel2 -> setText(stars);
-        ui -> consumedLabel2 -> setText("Consumed: "+ QString::number(m.getTimesConsumed()) + " times");
-    }
-}
-
-void MainWindow :: displayMatchas()
+void MainWindow::displayMatchas()
 {
-    if (matchas.size() > 0)
+    //show first the container
+    QLayout *layout = ui->cardsContainer->layout();
+
+    //remove cards currently shown.
+    while (QLayoutItem *item = layout -> takeAt(0))
     {
-        displayMatcha(matchas[0],1);
+        delete item -> widget();
+        delete item;
     }
-    else if (matchas.size() > 1)
+
+    //create one matchaCard for each matcha in collection
+    for (const matcha& m : matchas)
     {
-        displayMatcha(matchas[1],2);
+        MatchaCard *card = new MatchaCard(ui -> cardsContainer);
+        card -> setMatcha(m);
+
+        layout -> addWidget(card);
     }
+    //keep cards aligned at the top
+
+    layout -> addItem(new QSpacerItem(0,0, QSizePolicy::Minimum, QSizePolicy::Expanding));
 }
 
 void MainWindow::addMatcha()

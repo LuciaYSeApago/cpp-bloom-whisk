@@ -2,6 +2,7 @@
 #define MATCHACARD_H
 
 #include <QWidget>
+#include "matcha.h"
 
 namespace Ui
 {
@@ -15,6 +16,8 @@ class MatchaCard : public QWidget
   public:
     explicit MatchaCard(QWidget* parent = nullptr);
     ~MatchaCard();
+
+    void setMatcha(const matcha& m);
 
   private:
     Ui::MatchaCard* ui;
