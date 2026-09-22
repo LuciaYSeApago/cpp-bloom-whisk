@@ -386,7 +386,7 @@
            <height>329</height>
           </rect>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3"/>
+         <layout class="QGridLayout" name="gridLayout"/>
         </widget>
        </widget>
       </item>
