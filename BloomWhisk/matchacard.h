@@ -19,6 +19,9 @@ class MatchaCard : public QWidget
 
     void setMatcha(const matcha& m);
 
+  signals:
+    void consumeRequested();
+
   private:
     Ui::MatchaCard* ui;
 };

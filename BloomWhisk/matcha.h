@@ -33,6 +33,7 @@ class matcha
     void setTimesConsumed(int TIMES_CONSUMED);
     int getTimesConsumed() const;
 
+    void addTimesConsumed();
 };
 
 #endif // MATCHA_H

@@ -71,10 +71,21 @@ void MainWindow::displayMatchas()
     }
 
     //create one matchaCard for each matcha in collection
-    for (const matcha& m : matchas)
+    for (int index = 0; index < matchas.size(); index++)
     {
+        const matcha& m = matchas[index];
+
         MatchaCard *card = new MatchaCard(ui -> cardsContainer);
         card -> setMatcha(m);
+
+        //connect each matcha card with "array position".
+        connect (card, &MatchaCard::consumeRequested, this, [this, index]()
+        {
+            //adds one to times consumed
+            matchas[index].addTimesConsumed();
+            displayMatchas();
+        }
+        );
 
         layout -> addWidget(card);
     }

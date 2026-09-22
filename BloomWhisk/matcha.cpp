@@ -52,3 +52,8 @@ int matcha::getTimesConsumed() const
 {
     return TIMES_CONSUMED;
 }
+
+void matcha::addTimesConsumed()
+{
+    TIMES_CONSUMED++;
+}
